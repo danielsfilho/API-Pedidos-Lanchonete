@@ -8,8 +8,8 @@ const schemaClient = new mongoose.Schema({
 })
 
 const schemaProduct = new mongoose.Schema({
-    name: String,
-    price: Number,
+    productName: String,
+    productPrice: Number,
 })
 
 const schemaOrders = new mongoose.Schema({
