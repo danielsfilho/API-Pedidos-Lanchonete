@@ -6,32 +6,22 @@ async function get(req, res) {
 
     const obj = id ? { _id: id} : null
 
-    const client = await ProductsModel.find(obj)
+    const product = await ProductsModel.find(obj)
 
-    res.send(client)
+    res.send(product)
 }
 
 async function post(req, res) {
     const {
-            name,
-            email,
-            telephone,
-            address,
             productName,
             productPrice,
-            date,
-            status,
+
     } = req.body
 
     const orders = new ProductsModel({
-        name,
-        email,
-        telephone,
-        address,
         productName,
         productPrice,
-        date,
-        status,
+
     })
 
     orders.save()
@@ -44,11 +34,11 @@ async function post(req, res) {
 async function put(req, res) {
     const { id } = req.params
 
-    const client = await ProductsModel.findOneAndUpdate({ _id: id}, req.body, { new: true})
+    const product = await ProductsModel.findOneAndUpdate({ _id: id}, req.body, { new: true})
 
     res.send({
         message: "success",
-        client,
+        product,
     })
     
 }
