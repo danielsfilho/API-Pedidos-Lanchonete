@@ -23,10 +23,6 @@ async function post(req, res) {
         email,
         telephone,
         address,
-        productName,
-        productPrice,
-        date,
-        status,
     })
 
     orders.save()
